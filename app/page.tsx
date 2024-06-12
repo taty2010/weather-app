@@ -1,37 +1,21 @@
-import FourDay from "./components/next4Days";
-
-async function getWeather() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/forecast`);
-  return res.json();
-}
+import getWeather from "./components/getWeather";
+import getGeo from "./components/getGeo";
+import Card from "./components/card";
 
 export default async function Home() {
-  const data = await getWeather();
-  const week = Object.keys(data);
-
-  const getBG = `https://openweathermap.org/img/wn/${data[week[4]][0].icon}@2x.png`
-  
+  const popularZipcodes = [60601, 85001, 94102, 33131];
 
   return (
-    <main className="">
-      <section>
+    <main className='index'>
+      <section className='index_inner'>
         <h1>5-day Forecast</h1>
-        <div className="card" style={{ backgroundImage: `url(${getBG})` }}>
-          <div className="card_inner">
-          {week?.map((day) => {
-            return (
-              data[day].length > 0 && (
-                <div className="day">
-                  <h2>{day}</h2>
-                  <div className="weather">
-                    <FourDay data={data} day={day} />
-                  </div>
-                </div>
-              )
-            );
-          })}
-          </div>
-        </div>
+        <p> Check out other forecast's by adding /weather/[zipcode] to the url</p>
+        <h2>Popular Zipcodes</h2>
+        {popularZipcodes.map((zip) => {
+          return(
+            <Card key={zip} dynamic={false} getWeather={getWeather} getGeo={getGeo} zip={zip}/>
+          )
+        })}
       </section>
     </main>
   );

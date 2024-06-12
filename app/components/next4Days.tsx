@@ -1,9 +1,7 @@
 export default function FourDay({ data, day }) {
   return (
     <div className="weather_details">
-      {data[day]
-        .sort((a, b) => b.dt - a.dt)
-        .splice(0, 5)
+      {data[day].splice(0, 6)
         ?.map((weather) => (
           <div key={`${day}${weather.date}`} className="weather_details_hour">
             <img

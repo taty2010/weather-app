@@ -22,7 +22,7 @@ h1{
 }
 
 h2 {
-  margin: 2%;
+  margin: 1%;
   font-size: 1.8rem;
 }
 
@@ -40,12 +40,13 @@ p {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  max-width: 1100px;
 }
 
 .card_inner{
   border-radius: 30px;
   box-shadow: -10px 13px 19px 2px rgb(200 198 198 / 60%), 6px -2px 19px 2px rgb(235 231 231 / 60%);
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(6px);
   background-color: #d8d8d885;
 }
 
@@ -76,7 +77,7 @@ p {
 .weather_details_hour {
   display: flex;
   flex-flow: column;
-  padding: 2%;
+  padding: 1%;
   align-items: center;
 }
 
