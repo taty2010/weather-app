@@ -8,10 +8,7 @@ interface Forecast {
 } 
 
 type Main = {
-  temp: Number;
-  humidity: Number;
-  temp_max: Number;
-  temp_min: Number;
+  temp: Number
 }
 
 type Weather = {
@@ -48,16 +45,14 @@ export async function GET(req: Request){
     forecast[day] = []
   })
 
-  data.list.forEach(({main: {temp, humidity, temp_min, temp_max}, weather, dt_txt, dt}: Forecast) => {
+  data.list.forEach(({main: {temp}, weather, dt_txt, dt}: Forecast) => {
     const day = new Date(dt_txt).toUTCString().split(',')[0].trim()
     const test = {
       time: new Date(Number(dt) * 1000).toUTCString().split(' ')[4].trim(),
       dt,
-      temp,
-      low: temp_min,
-      high: temp_max,
-      humidity,
-      weather,
+      temp: Math.round(Number(temp)),
+      icon: weather[0].icon,
+      desc: weather[0].description,
       date: new Date(dt_txt),
       day: new Date(dt_txt).toUTCString().split(',')[0].trim()
     }
