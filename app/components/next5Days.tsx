@@ -1,4 +1,4 @@
-export default function FourDay({ data, day }) {
+export default function FiveDay({ data, day }) {
   return (
     <div className="weather_details">
       {data[day].splice(0, 6)

@@ -1,4 +1,4 @@
-import FourDay from "./next4Days";
+import FiveDay from "./next5Days";
 
 export default async function Card({ getWeather, getGeo, zip, dynamic }) {
   const { lat, lon, name } = await getGeo(zip);
@@ -26,7 +26,7 @@ export default async function Card({ getWeather, getGeo, zip, dynamic }) {
               <div key={day} className="day">
                 <h2>{day}</h2>
                 <div className="weather">
-                  <FourDay data={data} day={day} />
+                  <FiveDay data={data} day={day} />
                 </div>
               </div>
             )
