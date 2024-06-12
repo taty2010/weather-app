@@ -1,7 +1,7 @@
 import FourDay from "./components/next4Days";
 
 async function getWeather() {
-  const res = await fetch(`${process.env.NEXT_URL}/forecast`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/forecast`);
   return res.json();
 }
 
