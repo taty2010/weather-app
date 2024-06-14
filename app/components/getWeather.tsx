@@ -54,6 +54,7 @@ export default async function getWeather(lat: Number, lon: Number) {
     headers: {
       "Content-Type": "application/json",
     },
+    cache: 'no-store'
   });
 
   const data = await res.json();
