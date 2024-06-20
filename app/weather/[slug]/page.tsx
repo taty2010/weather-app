@@ -13,7 +13,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         <section>
           <h1>5-day Forecast</h1>
           <h2>{name}</h2>
-          <Card dynamic={true} getWeather={getWeather} getGeo={getGeo} zip={params.slug}/>
+          <Card dynamic getWeather={getWeather} getGeo={getGeo} zip={params.slug}/>
         </section>
       </main>
     );

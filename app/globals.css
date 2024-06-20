@@ -45,9 +45,9 @@ p {
 
 .card_inner{
   border-radius: 30px;
-  box-shadow: -10px 13px 19px 2px rgb(200 198 198 / 60%), 6px -2px 19px 2px rgb(235 231 231 / 60%);
+  box-shadow: -10px 13px 19px 2px hsl(194.48deg 10.26% 48.24% / 55%), 6px -2px 19px 2px hsl(0deg 0% 100% / 79%);
   backdrop-filter: blur(6px);
-  background-color: #d8d8d885;
+  background-color: #6a8891a3;
 }
 
 .day {
@@ -55,12 +55,14 @@ p {
   justify-content: center;
   align-items: center;
   padding: 1%;
+  max-width: 1100px;
 }
 
 .weather {
   display: flex;
   width: 30vw;
   border-bottom: 1px solid #e3e3e3;
+  max-width: 780px;
 }
 
 .day:last-of-type .weather{
@@ -69,7 +71,7 @@ p {
 
 .weather_details {
   display: flex;
-  width: 45vw;
+  width: 50vw;
   flex-flow: wrap;
   justify-content: center;
 }
@@ -79,6 +81,7 @@ p {
   flex-flow: column;
   padding: 1%;
   align-items: center;
+  flex-basis: 14%;
 }
 
 .weather_icon {
