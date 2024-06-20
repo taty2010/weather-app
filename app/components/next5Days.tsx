@@ -1,8 +1,7 @@
 export default function FiveDay({ data, day }) {
   return (
     <div className="weather_details">
-      {data[day].splice(0, 6)
-        ?.map((weather) => (
+      {data.map((weather) => (
           <div key={`${day}${weather.date}`} className="weather_details_hour">
             <img
               src={`https://openweathermap.org/img/wn/${weather?.icon}@2x.png`}
